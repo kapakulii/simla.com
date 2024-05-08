@@ -1,11 +1,4 @@
 // GSAP animation
-const duration = 1;
-const ease = "power3.inOut";
-
-gsap.defaults({
-  ease: ease,
-  duration: duration
-});
 // Global animation
 let mediaScreen = gsap.matchMedia();
 
@@ -19,8 +12,7 @@ elements.forEach((element, index) => {
   const nextIndex = (index + 1) % totalElements;
   const nextElement = elements[nextIndex];
 
-  wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' :
-    '-=1')
+  wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' : '-=1')
     .to(element, { x: '-3%', autoAlpha: 0, delay: duration * 1.5 });
 });
 
