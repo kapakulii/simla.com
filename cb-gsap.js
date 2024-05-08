@@ -42,5 +42,5 @@ function startCloudAnimation() {
 
 startCloudAnimation();
 
-// Start animation
+// Запускать анимацию каждые 4 секунды (4000 миллисекунд)
 setInterval(startCloudAnimation, 4000);

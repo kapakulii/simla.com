@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // Global animation
 const fadeOn = document.querySelectorAll('[fade-on]');
+
 fadeOn.forEach(
     container => {
         gsap.from(container, {

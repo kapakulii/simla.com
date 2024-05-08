@@ -3,18 +3,18 @@
 let mediaScreen = gsap.matchMedia();
 
 // Hero animation
-// const elements = document.querySelectorAll('.wam-hero_mobile-img');
-// const totalElements = elements.length;
+const elements = document.querySelectorAll('.wam-hero_mobile-img');
+const totalElements = elements.length;
 
-// const wamHeroTimeLine = gsap.timeline({ repeat: -1 });
+const wamHeroTimeLine = gsap.timeline({ repeat: -1 });
 
-// elements.forEach((element, index) => {
-//   const nextIndex = (index + 1) % totalElements;
-//   const nextElement = elements[nextIndex];
+elements.forEach((element, index) => {
+  const nextIndex = (index + 1) % totalElements;
+  const nextElement = elements[nextIndex];
 
-//   wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' : '-=1')
-//     .to(element, { x: '-3%', autoAlpha: 0, delay: duration * 1.5 });
-// });
+  wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' : '-=1')
+    .to(element, { x: '-3%', autoAlpha: 0, delay: duration * 1.5 });
+});
 
 // Desktop
 mediaScreen.add("(min-width: 768px)", () => {
