@@ -12,7 +12,8 @@ elements.forEach((element, index) => {
   const nextIndex = (index + 1) % totalElements;
   const nextElement = elements[nextIndex];
 
-  wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' : '-=1')
+  wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' :
+    '-=1')
     .to(element, { x: '-3%', autoAlpha: 0, delay: duration * 1.5 });
 });
 
@@ -41,7 +42,7 @@ mediaScreen.add("(min-width: 768px)", () => {
 
 // Mobile
 mediaScreen.add("(max-width: 767px)", () => {
-  // Steps Card animation
+  //Steps Card animation
   const cards = document.querySelectorAll('.wam-steps_img-hero');
 
   const wamCardsTimeLine = gsap.timeline({
