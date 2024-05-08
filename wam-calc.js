@@ -1,5 +1,5 @@
 // WAM Calculator
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let calcQuantity = 10000;
     let calcPrice = 60;
 
@@ -42,19 +42,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.querySelectorAll('#calc-quantity input[type="radio"], #calc-price input[type="radio"]').forEach(el => {
-        el.addEventListener('click', function() {
+        el.addEventListener('click', function () {
             const inputId = this.closest('form').id === 'calc-quantity' ? 'calc-quantity-2' : 'calc-price-2';
             document.getElementById(inputId).value = '';
             updateActiveElement(this, this.closest('form').id);
         });
     });
 
-    document.getElementById('calc-quantity-2').addEventListener('input', function() {
+    document.getElementById('calc-quantity-2').addEventListener('input', function () {
         this.value = this.value.split('').filter(isNumber).join('').slice(0, 6);
         updateActiveElement(this, this.closest('form').id);
     });
 
-    document.getElementById('calc-price-2').addEventListener('input', function() {
+    document.getElementById('calc-price-2').addEventListener('input', function () {
         this.value = this.value.split('').filter(isNumber).join('').slice(0, 6);
         updateActiveElement(this, this.closest('form').id);
     });
@@ -65,14 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
     calculateTotalCost();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('calc-quantity').addEventListener('keydown', function(event) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('calc-quantity').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             event.preventDefault();
         }
     });
 
-    document.getElementById('calc-price').addEventListener('keydown', function(event) {
+    document.getElementById('calc-price').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             event.preventDefault();
         }

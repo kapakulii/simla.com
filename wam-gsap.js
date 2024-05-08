@@ -40,7 +40,7 @@ elements.forEach((element, index) => {
   const nextElement = elements[nextIndex];
 
   wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' :
-      '-=1')
+    '-=1')
     .to(element, { x: '-3%', autoAlpha: 0, delay: duration * 1.5 });
 });
 
