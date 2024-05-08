@@ -7,6 +7,10 @@ gsap.defaults({
     duration: duration
 });
 
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollTrigger)
+});
+
 // Global animation
 const fadeOn = document.querySelectorAll('[fade-on]');
 fadeOn.forEach(

@@ -2,10 +2,6 @@
 // Global animation
 let mediaScreen = gsap.matchMedia();
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger)
-});
-
 // Hero animation
 const elements = document.querySelectorAll('.wam-hero_mobile-img');
 const totalElements = elements.length;
