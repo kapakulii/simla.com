@@ -1,5 +1,14 @@
 // GSAP animation
-// Global animation
+let mediaScreen = gsap.matchMedia();
+
+const duration = 1;
+const ease = "power3.inOut";
+
+gsap.defaults({
+    ease: ease,
+    duration: duration
+});
+
 let preLoadElement = document.querySelectorAll(
     ".cb-features_hero-line, .img-full");
 
@@ -7,7 +16,7 @@ gsap.set(preLoadElement, {
     opacity: 1
 });
 
-// Section_CB-CTA animation
+//Section_CB-CTA animation
 let mobileImg = document.querySelectorAll('[mobile-img]');
 let desktopImg = document.querySelectorAll('[desktop-img]');
 let cloudImg = document.querySelectorAll('[cloud-img]');
