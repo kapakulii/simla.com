@@ -113,7 +113,7 @@ generatorBtn.addEventListener('click', function () {
         const encodedMessageText = encodeURIComponent(
             messageText); // Кодируем текст сообщения для использования в URL
         generatedLink =
-            `https://api.whatsapp.com/send?phone=${formattedPhoneNumber}&text=${encodedMessageText}`;
+            `https://wa.me/send?phone=${formattedPhoneNumber}&text=${encodedMessageText}`;
         console.log('Generated link:', generatedLink); // Отладочное сообщение
 
         generateQRCode(generatedLink);
