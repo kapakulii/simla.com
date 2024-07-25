@@ -144,8 +144,8 @@ function generateQRCode(data) {
     console.log('Generating QR code for:', data); // Отладочное сообщение
 
     qrCode = new QRCodeStyling({
-        width: 420,
-        height: 420,
+        width: 1080,
+        height: 1080,
         data: data,
         margin: 0,
         qrOptions: {
@@ -243,6 +243,7 @@ function generateQRCode(data) {
 
         // После успешной генерации QR-кода запускаем анимацию для элемента с классом .qr-generator_link
         animateLink();
+        animateGeneratorButtonColorChange();
     }).catch((error) => {
         console.error('Error generating QR code:', error);
     });
@@ -298,6 +299,23 @@ function animateCopyBtnDone() {
                 delay: 1,
                 opacity: 0,
                 scale: 1
+            });
+        }
+    });
+}
+
+function animateGeneratorButtonColorChange() {
+    gsap.killTweensOf(generatorBtn);
+
+    gsap.to(generatorBtn, {
+        backgroundColor: '#30BF39',
+        duration: 0,
+        ease: 'none',
+        onComplete: function () {
+            gsap.to(generatorBtn, {
+                delay: 2,
+                backgroundColor: '#6528D7',
+                duration: 0.5
             });
         }
     });
