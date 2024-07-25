@@ -9,7 +9,7 @@ const openBtn = document.querySelector('[qr-generator="open-btn"]');
 const qrCodeContainer = document.querySelector('[qr-generator="qr-code"]');
 
 const qrLogo =
-    "data:image/png;base64,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";
+    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU3IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NyAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF80OTcyXzQ4MTEzKSI+CjxwYXRoIGQ9Ik0wLjk1NTA3OCAxMjcuOTk5QzAuOTU1MDc4IDU3LjMwNjcgNTguMjY0MiAwIDEyOC45NTYgMEMxOTkuNjQ4IDAgMjU2Ljk1NSA1Ny4zMDY3IDI1Ni45NTUgMTI3Ljk5OUMyNTYuOTU1IDE5OC42OTMgMTk5LjY0OCAyNTYgMTI4Ljk1NiAyNTZDNTguMjY0MiAyNTYgMC45NTUwNzggMTk4LjY5MyAwLjk1NTA3OCAxMjcuOTk5WiIgZmlsbD0iIzMwQkYzOSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEzNC45MSA1My45ODkzQzk2LjM0ODYgNTMuOTg5MyA2NS4wODQyIDg1LjI1MTMgNjUuMDg0MiAxMjMuODJDNjUuMDg0MiAxMzcuMDE0IDY4Ljc0NjggMTQ5LjM1MSA3NS4xMDU3IDE1OS44NzlMNjIuNSAxOTcuMzQxTDEwMS4xNiAxODQuOTY3QzExMS4xNjcgMTkwLjQ5NyAxMjIuNjcxIDE5My42NTEgMTM0LjkxIDE5My42NTFDMTczLjQ4NCAxOTMuNjUxIDIwNC43NDggMTYyLjM4NCAyMDQuNzQ4IDEyMy44MkMyMDQuNzQ4IDg1LjI1MTMgMTczLjQ4NCA1My45ODkzIDEzNC45MSA1My45ODkzWk0xMzQuOTEgMTgxLjk1M0MxMjMuMTEgMTgxLjk1MyAxMTIuMTEgMTc4LjQxMiAxMDIuOTM0IDE3Mi4zMzhMODAuNTkxNSAxNzkuNDlMODcuODUzNyAxNTcuOTAyQzgwLjg5NSAxNDguMzE5IDc2Ljc4NjQgMTM2LjU0NSA3Ni43ODY0IDEyMy44MkM3Ni43ODY0IDkxLjc1OTUgMTAyLjg2MSA2NS42ODQ1IDEzNC45MSA2NS42ODQ1QzE2Ni45NjggNjUuNjg0NSAxOTMuMDQ2IDkxLjc1OTUgMTkzLjA0NiAxMjMuODJDMTkzLjA0NiAxNTUuODcxIDE2Ni45NjggMTgxLjk1MyAxMzQuOTEgMTgxLjk1M1pNMTY3LjY1NSAxMzkuNjg3QzE2NS45MDYgMTM4LjcyNyAxNTcuMzA2IDEzNC4wODcgMTU1LjY5NiAxMzMuNDMzQzE1NC4wODUgMTMyLjc3NSAxNTIuOTA0IDEzMi40MzYgMTUxLjY0NSAxMzQuMTc1QzE1MC4zOTcgMTM1LjkxIDE0Ni44MjMgMTM5Ljc5OSAxNDUuNzQ2IDE0MC45NDdDMTQ0LjY1OSAxNDIuMTAzIDE0My42MTUgMTQyLjIxIDE0MS44NjIgMTQxLjI0OEMxNDAuMTE4IDE0MC4yOTEgMTM0LjQ0MSAxMzguMTkzIDEyNy44NiAxMzEuODY0QzEyMi43MzkgMTI2Ljk0MyAxMTkuMzgyIDEyMC45NzQgMTE4LjQwOCAxMTkuMTUxQzExNy40MyAxMTcuMzI4IDExOC40MDEgMTE2LjM5OSAxMTkuMzI2IDExNS41NDVDMTIwLjE1OSAxMTQuNzcyIDEyMS4xODkgMTEzLjUyNSAxMjIuMTIgMTEyLjUxOUMxMjMuMDQ1IDExMS41MTUgMTIzLjM3MSAxMTAuNzggMTI0LjAxMSAxMDkuNjE1QzEyNC42NDggMTA4LjQ1IDEyNC4zOTEgMTA3LjM5OCAxMjMuOTc2IDEwNi40ODlDMTIzLjU2NSAxMDUuNTgxIDEyMC4zMyA5Ni42NzU4IDExOC45OCA5My4wNTA1QzExNy42MjcgODkuNDI5OCAxMTYuMTIxIDg5Ljk2NjcgMTE1LjA4MiA4OS45MjQ3QzExNC4wNDEgODkuODg5OCAxMTIuODYgODkuNjk1OSAxMTEuNjcyIDg5LjY0OTNDMTEwLjQ3OSA4OS42MDcyIDEwOC41MzIgODkuOTgwNyAxMDYuODM3IDkxLjcwMTJDMTA1LjEzMyA5My40MjE2IDEwMC4zNjQgOTcuNTYyOCAxMDAuMDM5IDEwNi4zMzVDOTkuNzA3OCAxMTUuMTAzIDEwNS43NzcgMTIzLjgyIDEwNi42MjUgMTI1LjAzOEMxMDcuNDcyIDEyNi4yNjQgMTE4LjIxMiAxNDUuMjc1IDEzNi4wNTkgMTUzLjA5MUMxNTMuOTE3IDE2MC45MTEgMTU0LjAxMyAxNTguNTI4IDE1Ny4yODUgMTU4LjM1MkMxNjAuNTY1IDE1OC4xNzcgMTY3Ljk5MyAxNTQuNDMxIDE2OS42MzcgMTUwLjMyN0MxNzEuMjggMTQ2LjIyMyAxNzEuNDExIDE0Mi42NTQgMTcwLjk5NSAxNDEuODk1QzE3MC41NzUgMTQxLjEzNCAxNjkuNDAzIDE0MC42NDQgMTY3LjY1NSAxMzkuNjg3WiIgZmlsbD0iI0YxRjJGMiIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzQ5NzJfNDgxMTMiPgo8cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuOTU3MDMxKSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=";
 
 const initialPhoneNumberContent = phoneNumberImg.textContent;
 const initialMessageTextContent = messageTextImg.textContent;
@@ -34,6 +34,7 @@ const countryCodes = [
 
 let generatedLink = '';
 let qrCode;
+let lastClickTime = 0;
 
 inputNumber.addEventListener('input', function () {
     let value = inputNumber.value.replace(/\D/g, '');
@@ -73,14 +74,14 @@ inputNumber.addEventListener('input', function () {
         value = value.slice(3);
     }
     if (value.length > 4) {
-        formattedValue += value.slice(0, 4);
+        formattedValue += value.slice(0, 6);
     } else {
         formattedValue += value;
     }
 
-    if (formattedValue.length > 17) {
-        formattedValue = formattedValue.slice(0, 17);
-    }
+    // if (formattedValue.length > 17) {
+    //     formattedValue = formattedValue.slice(0, 17);
+    // }
 
     inputNumber.value = formattedValue.trim();
     phoneNumberImg.value = formattedValue.trim();
@@ -103,6 +104,13 @@ inputMessage.addEventListener('input', function () {
 });
 
 generatorBtn.addEventListener('click', function () {
+    const now = Date.now();
+    if (now - lastClickTime < 1000) { // Проверяем, прошло ли уже 1 секунда с последнего нажатия
+        return; // Если нет, отменяем действие
+    }
+
+    lastClickTime = now; // Обновляем время последнего нажатия
+
     const phoneNumber = inputNumber.value.trim(); // Удаляем пробелы с обоих концов значения
     const messageText = inputMessage.value.trim(); // Удаляем пробелы с обоих концов значения
 
@@ -119,7 +127,11 @@ generatorBtn.addEventListener('click', function () {
         generateQRCode(generatedLink);
     } else {
         // Если одно или оба поля не заполнены, анимируем их
-        if (!phoneNumber) shakeInput(inputNumber);
+        if (!phoneNumber) {
+            shakeInput(inputNumber);
+            setTimeout(() => inputNumber.focus(),
+                500); // Устанавливаем фокус на первый input после анимации
+        }
         if (!messageText) shakeInput(inputMessage);
     }
 });
@@ -276,9 +288,10 @@ function shakeInput(inputElement) {
         ease: "power2.inOut"
     }, {
         x: "0.5rem",
-        duration: 0.1,
         yoyo: true,
         repeat: 3,
+
+        duration: 0.1,
         ease: "power2.inOut"
     });
 }
