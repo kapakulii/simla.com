@@ -14,7 +14,7 @@ gsap.fromTo(heroImg, {
     stagger: .5,
     scrollTrigger: {
         trigger: heroImg,
-        start: "top 75% center",
+        start: "top 80% center",
         //markers: true
     }
 })
