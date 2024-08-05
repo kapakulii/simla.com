@@ -1,7 +1,11 @@
-// Global animation
+// GSAP animation
 let mediaScreen = gsap.matchMedia();
 
 // Hero animation
+gsap.set(".wam-hero_mobile-img", {
+  opacity: 1
+});
+
 const elements = document.querySelectorAll('.wam-hero_mobile-img');
 const totalElements = elements.length;
 
@@ -11,7 +15,8 @@ elements.forEach((element, index) => {
   const nextIndex = (index + 1) % totalElements;
   const nextElement = elements[nextIndex];
 
-  wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' : '-=1')
+  wamHeroTimeLine.from(element, { x: '6%', autoAlpha: 0 }, index === 0 ? '+=0' :
+    '-=1')
     .to(element, { x: '-3%', autoAlpha: 0, delay: duration * 1.5 });
 });
 
@@ -20,22 +25,24 @@ mediaScreen.add("(min-width: 768px)", () => {
   //Steps Card animation
   const cards = document.querySelectorAll('.wam-steps_img-hero');
 
-  const wamCardsTimeLine = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".wam-steps_img-wrapper",
-      start: 'top 90%',
-      toggleActions: 'play none none reverse'
-    },
-    defaults: {
-      duration: duration * 1.5
-    }
-  });
+  if (cards && cards.length > 0) {
+    const wamCardsTimeLine = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".wam-steps_img-wrapper",
+        start: 'top 90%',
+        toggleActions: 'play none none reverse'
+      },
+      defaults: {
+        duration: duration * 1.5
+      }
+    });
 
-  wamCardsTimeLine.to(cards[0], { x: "-14rem", rotate: -4 })
-    .to(cards[1], { x: "14rem", rotate: 4 }, "<")
-    .to(cards[2], { x: "-28rem", rotate: -8 }, "<")
-    .to(cards[3], { x: "28rem", rotate: 8 }, "<")
-    .to(cards[4], { y: "2rem" }, "<");
+    wamCardsTimeLine.to(cards[0], { x: "-14rem", rotate: -4 })
+      .to(cards[1], { x: "14rem", rotate: 4 }, "<")
+      .to(cards[2], { x: "-28rem", rotate: -8 }, "<")
+      .to(cards[3], { x: "28rem", rotate: 8 }, "<")
+      .to(cards[4], { y: "2rem" }, "<");
+  }
 });
 
 // Mobile
