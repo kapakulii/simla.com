@@ -1,8 +1,8 @@
 // GSAP animation
-let mediaScreen = gsap.matchMedia();
+let mediaScreenGuides = gsap.matchMedia();
 
 // Desktop
-mediaScreen.add("(min-width: 768px)", (context) => {
+mediaScreenGuides.add("(min-width: 768px)", (context) => {
     // Guides Card animation
     const cards = document.querySelectorAll('.wab-guide_img.back');
     const guideGroupFirst = document.querySelectorAll('[card-group-guide="1"]');
@@ -71,7 +71,7 @@ mediaScreen.add("(min-width: 768px)", (context) => {
 });
 
 // Mobile
-mediaScreen.add("(max-width: 767px)", () => {
+mediaScreenGuides.add("(max-width: 767px)", () => {
     // Guides Card animation
     const cards = document.querySelectorAll('.wab-guide_img.back');
     const guideGroupFirst = document.querySelectorAll('[card-group-guide="1"]');

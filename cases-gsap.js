@@ -1,8 +1,8 @@
 // GSAP animation
-let casesScreen = gsap.matchMedia();
+let mediaScreenCases = gsap.matchMedia();
 
 // Desktop
-casesScreen.add("(min-width: 768px)", (context) => {
+mediaScreenCases.add("(min-width: 768px)", (context) => {
     // Анимация для контейнеров cases
     const casesContainer = document.querySelectorAll('.cases_container');
 
