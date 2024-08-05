@@ -1,14 +1,6 @@
 // GSAP animation
 let mediaScreen = gsap.matchMedia();
 
-const duration = 1;
-const ease = "power3.inOut";
-
-gsap.defaults({
-    ease: ease,
-    duration: duration
-});
-
 // Global
 //Скрываем элементы в Sticky блоке при скролле
 var sectionHero = document.querySelector('.section-pt_hero');

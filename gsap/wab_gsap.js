@@ -1,14 +1,6 @@
 // GSAP animation
 let mediaScreen = gsap.matchMedia();
 
-const duration = 1;
-const ease = "power3.inOut";
-
-gsap.defaults({
-    ease: ease,
-    duration: duration
-});
-
 // Global
 // Button CTA animation
 const button = document.querySelector('.wab-cta_wrapper');

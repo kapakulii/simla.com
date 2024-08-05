@@ -1,20 +1,6 @@
 // GSAP animation
 let mediaScreen = gsap.matchMedia();
 
-const duration = 1;
-const ease = "power3.inOut";
-
-gsap.defaults({
-    ease: ease,
-    duration: duration
-});
-
-// Global
-// Button CTA animation
-
-//
-// End global animate
-
 // Desktop
 mediaScreen.add("(min-width: 768px)", (context) => {
     // Guides Card animation
