@@ -7,9 +7,9 @@ const copyBtns = document.querySelectorAll('[qr-generator="copy-btn"]');
 const copyBtnDone = document.querySelector('.qr-generator_btn-image-done')
 const openBtn = document.querySelector('[qr-generator="open-btn"]');
 const qrCodeContainer = document.querySelector('[qr-generator="qr-code"]');
-const qrCodeLinkWrapp = document.querySelector('[qr-generator="qr-code-wrapp"]');
 
-qrCodeLinkWrapp.setAttribute('download', 'qr-whatsapp.png');
+//const qrCodeLinkWrapp = document.querySelector('[qr-generator="qr-code-wrapp"]');
+//qrCodeLinkWrapp.setAttribute('download', 'qr-whatsapp.png');
 
 const qrLogo =
     "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU3IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NyAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF80OTcyXzQ4MTEzKSI+CjxwYXRoIGQ9Ik0wLjk1NTA3OCAxMjcuOTk5QzAuOTU1MDc4IDU3LjMwNjcgNTguMjY0MiAwIDEyOC45NTYgMEMxOTkuNjQ4IDAgMjU2Ljk1NSA1Ny4zMDY3IDI1Ni45NTUgMTI3Ljk5OUMyNTYuOTU1IDE5OC42OTMgMTk5LjY0OCAyNTYgMTI4Ljk1NiAyNTZDNTguMjY0MiAyNTYgMC45NTUwNzggMTk4LjY5MyAwLjk1NTA3OCAxMjcuOTk5WiIgZmlsbD0iIzMwQkYzOSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEzNC45MSA1My45ODkzQzk2LjM0ODYgNTMuOTg5MyA2NS4wODQyIDg1LjI1MTMgNjUuMDg0MiAxMjMuODJDNjUuMDg0MiAxMzcuMDE0IDY4Ljc0NjggMTQ5LjM1MSA3NS4xMDU3IDE1OS44NzlMNjIuNSAxOTcuMzQxTDEwMS4xNiAxODQuOTY3QzExMS4xNjcgMTkwLjQ5NyAxMjIuNjcxIDE5My42NTEgMTM0LjkxIDE5My42NTFDMTczLjQ4NCAxOTMuNjUxIDIwNC43NDggMTYyLjM4NCAyMDQuNzQ4IDEyMy44MkMyMDQuNzQ4IDg1LjI1MTMgMTczLjQ4NCA1My45ODkzIDEzNC45MSA1My45ODkzWk0xMzQuOTEgMTgxLjk1M0MxMjMuMTEgMTgxLjk1MyAxMTIuMTEgMTc4LjQxMiAxMDIuOTM0IDE3Mi4zMzhMODAuNTkxNSAxNzkuNDlMODcuODUzNyAxNTcuOTAyQzgwLjg5NSAxNDguMzE5IDc2Ljc4NjQgMTM2LjU0NSA3Ni43ODY0IDEyMy44MkM3Ni43ODY0IDkxLjc1OTUgMTAyLjg2MSA2NS42ODQ1IDEzNC45MSA2NS42ODQ1QzE2Ni45NjggNjUuNjg0NSAxOTMuMDQ2IDkxLjc1OTUgMTkzLjA0NiAxMjMuODJDMTkzLjA0NiAxNTUuODcxIDE2Ni45NjggMTgxLjk1MyAxMzQuOTEgMTgxLjk1M1pNMTY3LjY1NSAxMzkuNjg3QzE2NS45MDYgMTM4LjcyNyAxNTcuMzA2IDEzNC4wODcgMTU1LjY5NiAxMzMuNDMzQzE1NC4wODUgMTMyLjc3NSAxNTIuOTA0IDEzMi40MzYgMTUxLjY0NSAxMzQuMTc1QzE1MC4zOTcgMTM1LjkxIDE0Ni44MjMgMTM5Ljc5OSAxNDUuNzQ2IDE0MC45NDdDMTQ0LjY1OSAxNDIuMTAzIDE0My42MTUgMTQyLjIxIDE0MS44NjIgMTQxLjI0OEMxNDAuMTE4IDE0MC4yOTEgMTM0LjQ0MSAxMzguMTkzIDEyNy44NiAxMzEuODY0QzEyMi43MzkgMTI2Ljk0MyAxMTkuMzgyIDEyMC45NzQgMTE4LjQwOCAxMTkuMTUxQzExNy40MyAxMTcuMzI4IDExOC40MDEgMTE2LjM5OSAxMTkuMzI2IDExNS41NDVDMTIwLjE1OSAxMTQuNzcyIDEyMS4xODkgMTEzLjUyNSAxMjIuMTIgMTEyLjUxOUMxMjMuMDQ1IDExMS41MTUgMTIzLjM3MSAxMTAuNzggMTI0LjAxMSAxMDkuNjE1QzEyNC42NDggMTA4LjQ1IDEyNC4zOTEgMTA3LjM5OCAxMjMuOTc2IDEwNi40ODlDMTIzLjU2NSAxMDUuNTgxIDEyMC4zMyA5Ni42NzU4IDExOC45OCA5My4wNTA1QzExNy42MjcgODkuNDI5OCAxMTYuMTIxIDg5Ljk2NjcgMTE1LjA4MiA4OS45MjQ3QzExNC4wNDEgODkuODg5OCAxMTIuODYgODkuNjk1OSAxMTEuNjcyIDg5LjY0OTNDMTEwLjQ3OSA4OS42MDcyIDEwOC41MzIgODkuOTgwNyAxMDYuODM3IDkxLjcwMTJDMTA1LjEzMyA5My40MjE2IDEwMC4zNjQgOTcuNTYyOCAxMDAuMDM5IDEwNi4zMzVDOTkuNzA3OCAxMTUuMTAzIDEwNS43NzcgMTIzLjgyIDEwNi42MjUgMTI1LjAzOEMxMDcuNDcyIDEyNi4yNjQgMTE4LjIxMiAxNDUuMjc1IDEzNi4wNTkgMTUzLjA5MUMxNTMuOTE3IDE2MC45MTEgMTU0LjAxMyAxNTguNTI4IDE1Ny4yODUgMTU4LjM1MkMxNjAuNTY1IDE1OC4xNzcgMTY3Ljk5MyAxNTQuNDMxIDE2OS42MzcgMTUwLjMyN0MxNzEuMjggMTQ2LjIyMyAxNzEuNDExIDE0Mi42NTQgMTcwLjk5NSAxNDEuODk1QzE3MC41NzUgMTQxLjEzNCAxNjkuNDAzIDE0MC42NDQgMTY3LjY1NSAxMzkuNjg3WiIgZmlsbD0iI0YxRjJGMiIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzQ5NzJfNDgxMTMiPgo8cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuOTU3MDMxKSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=";
@@ -241,20 +241,32 @@ function generateQRCode(data) {
                 rotation: "0",
             },
         },
+        downloadOptions: {
+            name: 'qr-whatsapp',
+            extension: 'png',
+        },
         type: "canvas",
     });
 
     console.log('QR code instance created:', qrCode);
 
-    qrCodeContainer.innerHTML = "";
-
     qrCode.getRawData("png").then((blob) => {
         const url = URL.createObjectURL(blob);
-        const imgElement = document.querySelector(
-            '.qr-generator_qr-image'); // Используем правильный селектор для выбора элемента
-        imgElement.src = url; // Прямо заменяем src у существующего изображения
-        console.log(
-            'QR code generated and updated'); // Отладочное сообщение после обновления изображения
+        const imgElement = document.querySelector('.qr-generator_qr-image');
+        imgElement.src = url;
+        console.log('QR code generated and updated');
+
+        // Создаем временный элемент <a> для скачивания
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'qr-whatsapp.png'; // Задаем имя файла
+        document.body.appendChild(downloadLink); // Добавляем в body, чтобы ссылка была доступна для клика
+
+        // Имитируем клик по ссылке для начала скачивания
+        downloadLink.click();
+
+        // Удаляем ссылку из DOM после скачивания
+        document.body.removeChild(downloadLink);
 
         // После успешной генерации QR-кода запускаем анимацию для элемента с классом .qr-generator_link
         animateLink();
@@ -262,6 +274,7 @@ function generateQRCode(data) {
     }).catch((error) => {
         console.error('Error generating QR code:', error);
     });
+
 }
 
 function animateLink() {
