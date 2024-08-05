@@ -1,11 +1,13 @@
 // GSAP animation
-let mediaScreen = gsap.matchMedia();
+let mediaScreenPT = gsap.matchMedia();
 
 // Global
 //Скрываем элементы в Sticky блоке при скролле
 var sectionHero = document.querySelector('.section-pt_hero');
-var priceTablet = document.querySelector('.pt-tablet_header-row');
-var scrollBlocksHider = priceTablet.querySelectorAll('.pt-tablet_subheader, .btn-secondary');
+// var priceTablet = document.querySelector('.pt-tablet_header-row');
+// var scrollBlocksHider = priceTablet.querySelectorAll('.pt-tablet_subheader, .btn-secondary');
+
+var scrollBlocksHider = document.querySelectorAll('[scrollBlocksHider]')
 
 // GSAP анимация
 const animation = gsap.to(scrollBlocksHider, {
@@ -53,7 +55,7 @@ gsap.set(tabletPopups, {
 // End global animate
 
 // Desktop
-mediaScreen.add("(min-width: 768px)", (context) => {
+mediaScreenPT.add("(min-width: 768px)", (context) => {
     // Анимируем появление всплывающих подсказок
 
     const mouseEnterHandlers = [];
@@ -106,7 +108,7 @@ mediaScreen.add("(min-width: 768px)", (context) => {
 });
 
 // Mobile
-mediaScreen.add("(max-width: 767px)", () => {
+mediaScreenPT.add("(max-width: 767px)", () => {
     // Анимируем появление всплывающих подсказок
     gsap.set(tabletPopupBG, {
         display: 'block',
