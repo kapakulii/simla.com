@@ -1,14 +1,6 @@
 // GSAP animation
 let casesScreen = gsap.matchMedia();
 
-const duration = 1;
-const ease = "power3.inOut";
-
-gsap.defaults({
-    ease: ease,
-    duration: duration
-});
-
 // Desktop
 casesScreen.add("(min-width: 768px)", (context) => {
     // Анимация для контейнеров cases
