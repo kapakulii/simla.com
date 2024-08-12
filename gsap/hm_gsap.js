@@ -67,8 +67,7 @@ mediaScreenHM.add("(max-width: 767px)", (context) => {
             trigger: imgMessage1,
             start: 'top 50% center',
             end: 'bottom 45% center',
-            scrub: 8,
-            markers: true
+            scrub: 8
         }
     });
 
