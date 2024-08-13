@@ -42,7 +42,8 @@ mediaScreenHM.add("(min-width: 768px)", (context) => {
             trigger: imgMessage1,
             start: 'top 30% center',
             end: 'bottom 25% center',
-            scrub: 8
+            scrub: 8,
+            invalidateOnRefresh: true
         }
     });
 
@@ -53,7 +54,8 @@ mediaScreenHM.add("(min-width: 768px)", (context) => {
             trigger: imgMessage1,
             start: 'top 30% center',
             end: 'bottom 25% center',
-            scrub: 4
+            scrub: 4,
+            invalidateOnRefresh: true
         }
     });
 })
@@ -67,18 +69,20 @@ mediaScreenHM.add("(max-width: 767px)", (context) => {
             trigger: imgMessage1,
             start: 'top 50% center',
             end: 'bottom 45% center',
-            scrub: 8
+            scrub: 8,
+            invalidateOnRefresh: true
         }
     });
 
     gsap.to(imgOther, {
-        y: '1.5rem',
+        y: '1rem',
         duration: 4,
         scrollTrigger: {
             trigger: imgMessage1,
             start: 'top 50% center',
             end: 'bottom 45% center',
-            scrub: 4
+            scrub: 4,
+            invalidateOnRefresh: true
         }
     });
 })
@@ -97,8 +101,8 @@ gsap.from('.hm-quote_text .word', {
 
     scrollTrigger: {
         trigger: '.hm-quote_text',
-        start: 'top 80% center',
-        end: 'bottom center',
+        start: 'top 90% center',
+        end: 'bottom 60% center',
         scrub: 4
     }
 })
