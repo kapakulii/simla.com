@@ -28,10 +28,10 @@ let heroTL = gsap.timeline({
 heroTL.to(imgAppDesktop, { y: '0rem', autoAlpha: 1 })
 heroTL.fromTo(imgMessage1, { y: '0rem' }, { y: '0rem', autoAlpha: 1 }, "-=40%")
 heroTL.to(imgMessage2, { y: '0rem', autoAlpha: 1 }, "-=90%")
-heroTL.to(imgMessage3, { y: '0rem', autoAlpha: 1 }, "-=90%")
-heroTL.fromTo(imgAppMobile, { y: '0rem' }, { y: '0rem', autoAlpha: 1 }, "-=60%")
+heroTL.fromTo(imgAppMobile, { y: '0rem' }, { y: '0rem', autoAlpha: 1 }, "<")
 heroTL.fromTo(imgFedback1, { y: '0rem', scale: 1.25 }, { y: '0rem', autoAlpha: 1, scale: 1 }, '<')
-heroTL.fromTo(imgFedback2, { y: '0rem', scale: 1.25 }, { y: '0rem', autoAlpha: 1, scale: 1 }, '<');
+heroTL.fromTo(imgFedback2, { y: '0rem', scale: 1.25 }, { y: '0rem', autoAlpha: 1, scale: 1 }, '<')
+heroTL.to(imgMessage3, { y: '0rem', autoAlpha: 1 }, "-=90%");
 
 mediaScreenHM.add("(min-width: 768px)", (context) => {
     gsap.to(imgMessages, {
