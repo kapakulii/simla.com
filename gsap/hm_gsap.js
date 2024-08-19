@@ -43,7 +43,7 @@ mediaScreenHM.add("(min-width: 768px)", (context) => {
             start: 'top 30% center',
             end: 'bottom 25% center',
             scrub: 8,
-            invalidateOnRefresh: true
+            // invalidateOnRefresh: true
         }
     });
 
@@ -55,7 +55,7 @@ mediaScreenHM.add("(min-width: 768px)", (context) => {
             start: 'top 30% center',
             end: 'bottom 25% center',
             scrub: 4,
-            invalidateOnRefresh: true
+            // invalidateOnRefresh: true
         }
     });
 })
@@ -70,7 +70,7 @@ mediaScreenHM.add("(max-width: 767px)", (context) => {
             start: 'top 50% center',
             end: 'bottom 45% center',
             scrub: 8,
-            invalidateOnRefresh: true
+            // invalidateOnRefresh: true
         }
     });
 
@@ -82,7 +82,7 @@ mediaScreenHM.add("(max-width: 767px)", (context) => {
             start: 'top 50% center',
             end: 'bottom 45% center',
             scrub: 4,
-            invalidateOnRefresh: true
+            // invalidateOnRefresh: true
         }
     });
 })
