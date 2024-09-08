@@ -5,7 +5,7 @@ let typeSplit = new SplitType('[intro-text]', {
 
 // Функция для создания анимации
 function createScrollAnimation(attr, startPos, endPos) {
-    const element = document.querySelector(`[intro-text="${attr}"]`);
+    const element = document.querySelectorAll(`[intro-text="${attr}"]`);
 
     if (element) {
         gsap.from(`[intro-text="${attr}"] .word`, {
