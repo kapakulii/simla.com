@@ -86,23 +86,3 @@ mediaScreenHM.add("(max-width: 767px)", (context) => {
         }
     });
 })
-
-// SplitText animation
-let typeSplit = new SplitType('.hm-quote_text', {
-    types: 'words',
-    tagName: 'span'
-})
-
-gsap.from('.hm-quote_text .word', {
-    opacity: 0.1,
-    duration: 3,
-    ease: 'power4.inOut',
-    stagger: 0.25,
-
-    scrollTrigger: {
-        trigger: '.hm-quote_text',
-        start: 'top 90% center',
-        end: 'bottom 60% center',
-        scrub: 4
-    }
-})
