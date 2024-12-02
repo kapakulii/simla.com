@@ -18,7 +18,7 @@ gsap.fromTo(`[crm-intro-text] .word`, {
         ease: 'power4.inOut',
         stagger: 0.25,
         scrollTrigger: {
-            trigger: '.section_cwa-hero',
+            trigger: '[trigger-intro-text]',
             start: 'top top',
             end: 'bottom center',
             scrub: 10,
