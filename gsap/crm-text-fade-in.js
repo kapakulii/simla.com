@@ -19,9 +19,9 @@ gsap.fromTo(`[crm-intro-text] .word`, {
         stagger: 0.25,
         scrollTrigger: {
             trigger: '[trigger-intro-text]',
-            start: 'top top',
+            start: 'top 10% top',
             end: 'bottom center',
-            scrub: 10,
+            scrub: 5,
             //markers: true
         }
     });
