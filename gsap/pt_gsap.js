@@ -2,26 +2,7 @@
 let mediaScreenPT = gsap.matchMedia();
 
 // Global
-//Скрываем элементы в Sticky блоке при скролле
 var sectionHero = document.querySelector('.section-pt_hero');
-// var priceTablet = document.querySelector('.pt-tablet_header-row');
-// var scrollBlocksHider = priceTablet.querySelectorAll('.pt-tablet_subheader, .btn-secondary');
-
-var scrollBlocksHider = document.querySelectorAll('[scrollBlocksHider]')
-
-// GSAP анимация
-const animation = gsap.to(scrollBlocksHider, {
-    autoAlpha: 0,
-    height: 0,
-    padding: 0,
-    scrollTrigger: {
-        trigger: sectionHero,
-        start: "bottom 7% top",
-        end: "bottom 7% top",
-        toggleActions: "play none reverse none",
-        invalidateOnRefresh: true
-    },
-});
 
 // Promo sectionHero
 var promoTag = document.querySelectorAll('.pt-promo_tag-wrapper');
@@ -56,6 +37,22 @@ gsap.set(tabletPopups, {
 
 // Desktop
 mediaScreenPT.add("(min-width: 768px)", (context) => {
+    //Скрываем элементы в Sticky блоке при скролле
+    var scrollBlocksHider = document.querySelectorAll('[scrollBlocksHider]');
+
+    const animation = gsap.to(scrollBlocksHider, {
+        autoAlpha: 0,
+        height: 0,
+        padding: 0,
+        scrollTrigger: {
+            trigger: sectionHero,
+            start: "bottom 7% top",
+            end: "bottom 7% top",
+            toggleActions: "play none reverse none",
+            invalidateOnRefresh: true
+        },
+    });
+
     // Анимируем появление всплывающих подсказок
 
     const mouseEnterHandlers = [];
