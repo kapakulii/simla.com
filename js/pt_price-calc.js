@@ -117,8 +117,13 @@ function updatePricesWithoutDefaultsCheck() {
     document.querySelectorAll('[calc-basic-price="1m"]').forEach(el => {
         el.textContent = formatPrice(99 * discount);
     });
+
     document.querySelectorAll('[calc-basic-price="text-period"]').forEach(el => {
         el.textContent = periodValue === '1m' ? 'mensual' : periodValue === '6m' ? 'semestral' : 'anual';
+    });
+
+    document.querySelectorAll('[calc-basic-price="text-period-en"]').forEach(el => {
+        el.textContent = periodValue === '1m' ? 'monthly' : periodValue === '6m' ? 'semesterly' : 'annual';
     });
 
     document.querySelector('[calc-professional-price="total"]').textContent = formatPrice(totalPriceProfessional);
