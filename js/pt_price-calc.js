@@ -123,7 +123,7 @@ function updatePricesWithoutDefaultsCheck() {
     });
 
     document.querySelectorAll('[calc-basic-price="text-period-en"]').forEach(el => {
-        el.textContent = periodValue === '1m' ? 'monthly' : periodValue === '6m' ? 'semesterly' : 'annual';
+        el.textContent = periodValue === '1m' ? 'monthly' : periodValue === '6m' ? 'sem.' : 'annual';
     });
 
     document.querySelector('[calc-professional-price="total"]').textContent = formatPrice(totalPriceProfessional);
