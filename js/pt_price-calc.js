@@ -102,22 +102,32 @@ function updatePricesWithoutDefaultsCheck() {
     const discount = periodValue === '1m' ? 1 : periodValue === '6m' ? 0.85 : 0.8;
     const periodMultiplier = periodValue === '1m' ? 1 : periodValue === '6m' ? 6 : 12;
 
-    const basicPrice = 99 + Math.max(0, usersCount - 3) * 40 + Math.max(0, wanumbersCount - 1) * 25;
-    const professionalPrice = 149 + Math.max(0, usersCount - 3) * 50 + Math.max(0, wanumbersCount - 1) * 25;
+    const basicPricePerMonth = 99 + (Math.max(0, usersCount - 3) * 40) + (Math.max(0, wanumbersCount - 1) * 25);
+    const professionalPricePerMonth = 149 + (Math.max(0, usersCount - 3) * 50) + (Math.max(0, wanumbersCount - 1) * 25);
 
-    const totalPriceBasic = basicPrice * discount * periodMultiplier;
-    const totalPriceProfessional = professionalPrice * discount * periodMultiplier;
+    const totalPriceBasic = basicPricePerMonth * discount * periodMultiplier;
+    const totalPriceProfessional = professionalPricePerMonth * discount * periodMultiplier;
 
-    const savingsBasic = basicPrice * periodMultiplier - totalPriceBasic;
-    const savingsProfessional = professionalPrice * periodMultiplier - totalPriceProfessional;
+    const savingsBasic = basicPricePerMonth * periodMultiplier - totalPriceBasic;
+    const savingsProfessional = professionalPricePerMonth * periodMultiplier - totalPriceProfessional;
 
+    // Обновление цены за 1 месяц
+    document.querySelectorAll('[calc-basic-price="1m"]').forEach(el => {
+        el.textContent = formatPrice(basicPricePerMonth * discount);
+    });
+
+    document.querySelectorAll('[calc-professional-price="1m"]').forEach(el => {
+        el.textContent = formatPrice(professionalPricePerMonth * discount);
+    });
+
+    // Обновление общей цены
     document.querySelector('[calc-basic-price="total"]').textContent = formatPrice(totalPriceBasic);
     document.querySelector('[calc-basic-price="discount"]').textContent = formatPrice(savingsBasic);
 
-    document.querySelectorAll('[calc-basic-price="1m"]').forEach(el => {
-        el.textContent = formatPrice(99 * discount);
-    });
+    document.querySelector('[calc-professional-price="total"]').textContent = formatPrice(totalPriceProfessional);
+    document.querySelector('[calc-professional-price="discount"]').textContent = formatPrice(savingsProfessional);
 
+    // Обновление текста для периода
     document.querySelectorAll('[calc-basic-price="text-period"]').forEach(el => {
         el.textContent = periodValue === '1m' ? 'mensual' : periodValue === '6m' ? 'semestral' : 'anual';
     });
@@ -126,16 +136,16 @@ function updatePricesWithoutDefaultsCheck() {
         el.textContent = periodValue === '1m' ? 'monthly' : periodValue === '6m' ? 'sem.' : 'annual';
     });
 
-    document.querySelector('[calc-professional-price="total"]').textContent = formatPrice(totalPriceProfessional);
-    document.querySelector('[calc-professional-price="discount"]').textContent = formatPrice(savingsProfessional);
-
-    document.querySelectorAll('[calc-professional-price="1m"]').forEach(el => {
-        el.textContent = formatPrice(149 * discount);
-    });
-
+    // Скрытие блока скидок, если выбран 1 месяц
     const discountPriceWrappers = document.querySelectorAll('.pt-tablet_discond-price-wrapper');
     discountPriceWrappers.forEach(wrapper => {
         wrapper.style.display = (periodValue === '1m') ? 'none' : '';
+    });
+
+    // Скрытие/отображение блоков calc-basic-price="last-string"
+    const lastStringBlocks = document.querySelectorAll('[calc-basic-price="last-string"]');
+    lastStringBlocks.forEach(block => {
+        block.style.display = (periodValue === '1m') ? 'none' : '';
     });
 }
 
