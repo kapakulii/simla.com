@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Анимация появления mainBlock через 30 секунд
     setTimeout(() => {
+        mainBlock.style.display = "flex";
+
         gsap.fromTo(mainBlock,
             { autoAlpha: 0, y: 20 },
             { autoAlpha: 1, y: 0, duration: 0.5, delay: 30, ease: "power2.out" }
