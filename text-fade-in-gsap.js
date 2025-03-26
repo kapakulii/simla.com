@@ -8,7 +8,7 @@ function createScrollAnimation(attr, startPos, endPos) {
     const elements = document.querySelectorAll(`[intro-text="${attr}"]`);
 
     if (elements.length > 0) {
-        gsap.from(`[intro-text="${attr}"] .word`, {
+        gsap.to(`[intro-text="${attr}"] .word`, {
             opacity: 0.1,
             duration: 3,
             ease: 'power4.inOut',
