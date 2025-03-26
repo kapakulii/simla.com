@@ -12,7 +12,7 @@ function createScrollAnimation(attr, startPos, endPos) {
         gsap.set(`[intro-text="${attr}"] .word`, { opacity: 0.1 });
 
         gsap.to(`[intro-text="${attr}"] .word`, {
-            opacity: 1, // Конечное состояние
+            opacity: 1,
             duration: 3,
             ease: 'power4.inOut',
             stagger: 0.25,
