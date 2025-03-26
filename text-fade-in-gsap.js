@@ -9,7 +9,7 @@ function createScrollAnimation(attr, startPos, endPos) {
 
     if (elements.length > 0) {
         gsap.to(`[intro-text="${attr}"] .word`, {
-            opacity: 0.1,
+            opacity: 1,
             duration: 3,
             ease: 'power4.inOut',
             stagger: 0.25,
