@@ -5,16 +5,16 @@ let typeSplit = new SplitType('[intro-text]', {
 
 // Функция для создания анимации
 function createScrollAnimation(attr, startPos, endPos) {
-    const element = document.querySelectorAll(`[intro-text="${attr}"]`);
+    const elements = document.querySelectorAll(`[intro-text="${attr}"]`);
 
-    if (element) {
+    if (elements.length > 0) {
         gsap.from(`[intro-text="${attr}"] .word`, {
             opacity: 0.1,
             duration: 3,
             ease: 'power4.inOut',
             stagger: 0.25,
             scrollTrigger: {
-                trigger: element,
+                trigger: elements[0], // Берём первый найденный элемент
                 start: startPos,
                 end: endPos,
                 scrub: 4
@@ -23,8 +23,11 @@ function createScrollAnimation(attr, startPos, endPos) {
     }
 }
 
-// Запуск анимаций для разных элементов
-//Запустить позднее (Mobile)
-createScrollAnimation('late', 'top 70% center', 'bottom 30% center');
-//Запустить раньше (Home)
-createScrollAnimation('early', 'top 90% center', 'bottom 60% center');
+// Проверяем, есть ли элементы перед запуском анимации
+if (document.querySelector('[intro-text="late"]')) {
+    createScrollAnimation('late', 'top 70% center', 'bottom 30% center');
+}
+
+if (document.querySelector('[intro-text="early"]')) {
+    createScrollAnimation('early', 'top 90% center', 'bottom 60% center');
+}
