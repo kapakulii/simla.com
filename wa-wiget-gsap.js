@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         gsap.fromTo(mainBlock,
             { autoAlpha: 0, y: 20 },
-            { autoAlpha: 1, y: 0, duration: 0.5, delay: 30, ease: "power2.out" }
+            { autoAlpha: 1, y: 0, duration: 0.5, delay: 60, ease: "power2.out" }
         );
 
         gsap.fromTo(chatWrapper,
             { autoAlpha: 0, y: 20 },
-            { autoAlpha: 1, y: 0, duration: 0.5, delay: 35, ease: "power2.out" }
+            { autoAlpha: 1, y: 0, duration: 0.5, delay: 65, ease: "power2.out" }
         );
     }, 100);
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     };
-    setTimeout(hideChat, 80000); // Исчезновение chatWrapper через 80 секунд или при клике
+    setTimeout(hideChat, 90000); // Исчезновение chatWrapper через 80 секунд или при клике
 
     if (chatCloser) {
         chatCloser.addEventListener("click", (event) => {
