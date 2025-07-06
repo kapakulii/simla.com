@@ -1,4 +1,4 @@
-// Hero animation
+// Hero animation (не используется в данный момент)
 let mediaScreenHM = gsap.matchMedia();
 
 let imgAppDesktop = document.querySelector('.hm-hero_img.n1');
