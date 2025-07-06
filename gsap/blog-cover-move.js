@@ -12,8 +12,7 @@ imagesLoaded(document.body, { background: true }, function () {
                 trigger: '[ma-cover-image="scroll-trigger"]',
                 start: 'top bottom',
                 end: 'bottom top',
-                scrub: 2,
-                markers: true
+                scrub: 2
             }
         });
     });
