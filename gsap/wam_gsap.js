@@ -1,4 +1,4 @@
-// GSAP animation
+// GSAP animation (В настоящее время не используется)
 let mediaScreen = gsap.matchMedia();
 
 // Hero animation
