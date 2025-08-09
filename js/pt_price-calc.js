@@ -99,25 +99,31 @@ function updatePricesWithoutDefaultsCheck() {
     const usersCount = parseInt(document.querySelector('[calc-users="count"]').value, 10);
     const wanumbersCount = parseInt(document.querySelector('[calc-wanumbers="count"]').value, 10);
     const periodValue = document.querySelector('.is-active[calc-period]').getAttribute('calc-period');
+
+    // Старая логика скидок
     const discount = periodValue === '1m' ? 1 : periodValue === '6m' ? 0.85 : 0.8;
     const periodMultiplier = periodValue === '1m' ? 1 : periodValue === '6m' ? 6 : 12;
 
-    const basicPricePerMonth = 99 + (Math.max(0, usersCount - 3) * 40) + (Math.max(0, wanumbersCount - 1) * 25);
-    const professionalPricePerMonth = 149 + (Math.max(0, usersCount - 3) * 50) + (Math.max(0, wanumbersCount - 1) * 25);
+    // Разделяем цену: база + пользователи (со скидкой) и номера WhatsApp (без скидки)
+    const baseAndUsersBasic = 99 + (Math.max(0, usersCount - 3) * 40);
+    const baseAndUsersProfessional = 149 + (Math.max(0, usersCount - 3) * 50);
+    const waNumbersPrice = (Math.max(0, wanumbersCount - 1) * 25);
 
-    const totalPriceBasic = basicPricePerMonth * discount * periodMultiplier;
-    const totalPriceProfessional = professionalPricePerMonth * discount * periodMultiplier;
+    // Применяем скидку только к базе + пользователям
+    const totalPriceBasic = (baseAndUsersBasic * discount + waNumbersPrice) * periodMultiplier;
+    const totalPriceProfessional = (baseAndUsersProfessional * discount + waNumbersPrice) * periodMultiplier;
 
-    const savingsBasic = basicPricePerMonth * periodMultiplier - totalPriceBasic;
-    const savingsProfessional = professionalPricePerMonth * periodMultiplier - totalPriceProfessional;
+    // Экономия считается только на базу + пользователей
+    const savingsBasic = (baseAndUsersBasic * periodMultiplier) - (baseAndUsersBasic * discount * periodMultiplier);
+    const savingsProfessional = (baseAndUsersProfessional * periodMultiplier) - (baseAndUsersProfessional * discount * periodMultiplier);
 
-    // Обновление цены за 1 месяц
+    // Обновление цены за 1 месяц (тоже без скидки на номера)
     document.querySelectorAll('[calc-basic-price="1m"]').forEach(el => {
-        el.textContent = formatPrice(basicPricePerMonth * discount);
+        el.textContent = formatPrice(baseAndUsersBasic * discount + waNumbersPrice);
     });
 
     document.querySelectorAll('[calc-professional-price="1m"]').forEach(el => {
-        el.textContent = formatPrice(professionalPricePerMonth * discount);
+        el.textContent = formatPrice(baseAndUsersProfessional * discount + waNumbersPrice);
     });
 
     // Обновление общей цены
