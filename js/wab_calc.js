@@ -1,7 +1,7 @@
 // Объявление переменных для расчета
 let calcQuantity = 10000;
 let calcPrice = 60;
-let calcCountryMultiplier = 0.04796;
+let calcCountryMultiplier = 0.03355;
 
 // Функция для форматирования чисел
 function formatNumber(num) {
